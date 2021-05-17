@@ -1,0 +1,62 @@
+.root{
+    width: 100%;
+    background-color: #d5dbd8;
+    position: relative;
+    height: 100vh;
+    .navbar{
+        position: relative;
+        z-index: 1;
+        width: 90%;
+        padding: 2rem 5%;
+        display: flex;
+        align-items: flex-start;
+        background-color: #D81159;
+        color: #efefef;
+        height: 200px;
+        .navbarContent{
+            display: flex;
+            align-items: center;
+            span{
+                font-weight: bold;
+            }
+            svg{
+                font-size: 3rem;
+                margin-right: 1rem;
+            }
+        }
+    }
+
+    .loginSection{
+        width: 60%;
+        margin: 0 auto;
+        padding: 2rem;
+        background-color: #fff;
+        position: relative;
+        z-index: 2;
+        top: -150px;
+        border-radius: 5px;
+        box-shadow: 0 17px 50px 0 rgba(0, 0, 0, .29), 0 12px 15px 0 rgba(0, 0, 0, .24);
+        text-align: center;
+        p{
+            font-weight: normal;
+            font-size: 1.8rem;
+        }
+        .google{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            button{
+                border: none;
+                background: none;
+                svg{
+                    cursor: pointer;
+                    font-size: 3rem;
+                    margin-right: .5rem;
+                }
+                span{
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+}

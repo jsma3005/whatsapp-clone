@@ -1,0 +1,14 @@
+.root{
+    overflow-y: scroll !important;
+    overflow-x: hidden !important;
+    height: 100%;
+    background-color: #fff;
+    .loader{
+        text-align: center;
+        padding-top: 2rem;
+    }
+    .usersList{
+        overflow-y: scroll;
+        overflow-x: hidden;
+    }
+}

@@ -1,0 +1,11 @@
+.isEmptyChat{
+    text-align: center;
+}
+.root{
+    padding: 1rem 3rem;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    overflow-x: hidden;
+    overflow-y: scroll;
+}

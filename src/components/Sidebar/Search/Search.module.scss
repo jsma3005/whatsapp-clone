@@ -1,0 +1,21 @@
+.root{
+    padding: .5rem;
+    background-color: #f6f6f6;
+    .searchContent{
+        display: flex;
+        align-items: center;
+        background-color: #fff;
+        border-radius: 20px;
+        padding: .7rem;
+        svg{
+            margin-right: 1rem;
+            font-size: 1.3rem;
+        }
+        .searchInput{
+            border: none;
+            background: none;
+            width: 100%;
+            outline: none;
+        }
+    }
+}
