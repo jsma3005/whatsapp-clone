@@ -1,5 +1,5 @@
 import moment from 'moment';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { fire } from '../../services/firebase';
 import Search from './Search';
@@ -10,6 +10,7 @@ import Users from './Users';
 const Sidebar = () => {
     const [user] = useAuthState(fire.auth());
     const currentDate = moment().format('llll');
+    const [searchUserInput, setSearchUserInput] = useState('');
 
     useEffect(() => {
         fire.database().ref(`/users/${user.uid}`)
@@ -21,8 +22,8 @@ const Sidebar = () => {
     return (
         <div className={cls.root}>
             <Top user={user} />
-            <Search />
-            <Users />
+            <Search value={searchUserInput} setValue={setSearchUserInput} />
+            <Users searchUserInput={searchUserInput} />
         </div>
     )
 }

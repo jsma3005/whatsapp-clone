@@ -5,7 +5,7 @@ import Loader from '../../Loader/Loader';
 import UserCard from './UserCard';
 import cls from './Users.module.scss';
 
-const Users = () => {
+const Users = ({ searchUserInput }) => {
     const [users, setUsers] = useState(null);
     const [ user ] = useAuthState(fire.auth());
 
@@ -14,13 +14,18 @@ const Users = () => {
             if(res.val()){
                 const response = Object.values(res.val()).map(item => item);
                 const filteredResponse = response.filter(item => item.uid !== user.uid);
-                setUsers(filteredResponse);
+                if(searchUserInput !== ''){
+                    const searchValue = searchUserInput.toUpperCase();
+                    const searchFilter = filteredResponse.filter(({ name }) => name.toUpperCase().includes(searchValue));
+                    setUsers(searchFilter);
+                }else{
+                    setUsers(filteredResponse);
+                }
             }else{
                 setUsers(false);
             }
         })
-    }, [setUsers, user.uid]);
-
+    }, [setUsers, user.uid, searchUserInput]);
 
     return (
         <div className={cls.root}>
